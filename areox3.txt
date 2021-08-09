@@ -1,0 +1,73 @@
+Aerox 3 wireless reverse engineer
+
+
+// NOTE: LEDs are not saved to device memory
+
+//LED WIRED
+
+21 01 00 ff 00 00 00 00 // first led red static
+
+21 01 01 ff 00 00 00 00 // second led red static
+
+21 01 02 ff 00 00 00 00 // third led red static
+
+//LED WIRELESS
+
+61 01 00 ff 00 00 00 00 // first led red static
+
+61 01 01 ff 00 00 00 00 // second led red static
+
+61 01 02 ff 00 00 00 00 // third led red static
+
+
+
+//LED intensity wired
+23 0f 01 01 00 30 75 00 // full brightness
+23 08 01 01 00 30 75 00// 3/4 brightness
+23 04 01 01 00 30 75 00// half brightness
+23 01 01 01 00 30 75 00// 1/4 brightness
+23 00 01 01 00 30 75 00// low brightness
+
+
+//LED intensity wireless
+63 0f 01 01 00 30 75 00 // full brightness
+63 08 01 01 00 30 75 00// 3/4 brightness
+63 04 01 01 00 30 75 00// half brightness
+63 01 01 01 00 30 75 00// 1/4 brightness
+63 00 01 01 00 30 75 00// low brightness
+
+
+//DPI LEVEL WIRED
+2d 05 00 04 09 0d 1b 26 // dpi level 1
+2d 05 01 04 09 0d 1b 26 // dpi level 2
+2d 05 02 04 09 0d 1b 26 // dpi level 3
+2d 05 03 04 09 0d 1b 26 // dpi level 4
+2d 05 04 04 09 0d 1b 26 // dpi level 5
+
+//DPI LEVEL WIRELESS
+6d 05 00 04 09 0d 1b 26 // dpi level 1
+6d 05 01 04 09 0d 1b 26 // dpi level 2
+6d 05 02 04 09 0d 1b 26 // dpi level 3
+6d 05 03 04 09 0d 1b 26 // dpi level 4
+6d 05 04 04 09 0d 1b 26 // dpi level 5
+
+
+//Polling rate wired
+
+2b 00 00 00 00 00 00 00 // polling rate 1000
+2b 01 00 00 00 00 00 00 // polling rate 500
+2b 02 00 00 00 00 00 00 // polling rate 250
+2b 03 00 00 00 00 00 00 // polling rate 125
+
+//Polling rate wireless
+
+6b 00 00 00 00 00 00 00 // polling rate 1000
+6b 01 00 00 00 00 00 00 // polling rate 500
+6b 02 00 00 00 00 00 00 // polling rate 250
+6b 03 00 00 00 00 00 00 // polling rate 125
+
+
+
+
+11 00 00 00 00 00 00 // save, read settings?
+51 00 00 00 00 00 00 // save, read settings?
