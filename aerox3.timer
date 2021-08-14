@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Write to mouse every 5 seconds
+Requires=aerox3.service
+
+[Timer]
+Unit=aerox3.service
+OnUnitActiveSec=1
+
+[Install]
+WantedBy=timers.target 

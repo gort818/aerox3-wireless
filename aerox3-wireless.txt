@@ -1,0 +1,140 @@
+Aerox 3 wireless reverse engineer
+
+
+VID:1038
+PID:1838
+END:3
+report size = 64
+
+wireshark filter=usb.bInterfaceClass == HID && usb.endpoint_address.direction != IN && usb.src == host && usb.setup.wLength == 64
+
+
+// NOTE: LEDs are not saved to device memory
+
+
+//LED WIRELESS
+
+61 01 00 ff 00 00 00 00 // first led red static
+
+61 01 01 ff 00 00 00 00 // second led red static
+
+61 01 02 ff 00 00 00 00 // third led red static
+
+
+wireless reactve lighting
+
+66 01 00 ff ff ff // set reactive led to white
+
+
+
+//LED intensity wireless
+63 0f 01 01 00 30 75 00 // full brightness
+63 08 01 01 00 30 75 00// 3/4 brightness
+63 04 01 01 00 30 75 00// half brightness
+63 01 01 01 00 30 75 00// 1/4 brightness
+63 00 01 01 00 30 75 00// low brightness
+
+
+
+
+//DPI LEVEL WIRELESS
+6d 05 00 04 09 0d 1b 26 // dpi level 1
+6d 05 01 04 09 0d 1b 26 // dpi level 2
+6d 05 02 04 09 0d 1b 26 // dpi level 3
+6d 05 03 04 09 0d 1b 26 // dpi level 4
+6d 05 04 04 09 0d 1b 26 // dpi level 5
+
+//manual polling rate adjust wireless
+6d 05 00 00 09 0d 1b 26 //dpi level 1 =100
+6d 05 00 02 09 0d 1b 26 //dpi level 1 =200
+6d 05 00 03 09 0d 1b 26 //dpi level 1 =300
+6d 05 00 05 09 0d 1b 26 //dpi level 1 =500
+6d 05 00 06 09 0d 1b 26 //dpi level 1 =600
+6d 05 00 07 09 0d 1b 26 //dpi level 1 =700
+6d 05 00 09 0a 0d 1b 26 //dpi level 1 =800
+
+6d 05 02 04 09 0a 1b 26 //dpi level 3 =900
+6d 05 02 04 09 0b 1b 26 //dpi level 3 =1000
+6d 05 02 04 09 0c 1b 26 //dpi level 3 =1110
+
+
+
+//Polling rate wireless
+
+6b 00 00 00 00 00 00 00 // polling rate 1000
+6b 01 00 00 00 00 00 00 // polling rate 500
+6b 02 00 00 00 00 00 00 // polling rate 250
+6b 03 00 00 00 00 00 00 // polling rate 125
+
+
+
+
+//Save settings Wireless
+51 00 00 00 00 00 00 // save, read settings?
+
+
+
+wireless dim timer
+[63] [intensity] [01] [01] [00] last 3 [time?]
+
+63 0f 01 01 00 00 00 00 // dim timer off
+63 01 01 01 00 60 ea 00 // dim timer 1 min
+63 0f 01 01 00 20 bf 02 // dim timer 3 mins
+63 0f 01 01 00 80 a9 03 // dim timer 4 mins
+63 0f 01 01 00 e0 93 04 // dim timer 5 mins
+63 01 01 01 00 80 4f 12 // dim timer 20 mins
+
+
+wireless sleep timer
+69 00 00 00 00 00 00 00 // sleep timer 0ff
+69 60 ea 00 00 00 00 00 // sleep timer 1 min
+69 90 5f 01 00 00 00 00 // sleeptimer 1.5 mins
+69 c0 d4 01 00 00 00 00 // sleeptimer 2 mins
+69 29 bf 02 00 00 00 00 // sleep timer 3 mins
+69 50 34 03 00 00 00 00 // sleep timer 3.5 mins
+69 e0 93 04 00 00 00 00 // sleep timer 5 mins
+69 80 4f 12 00 00 00 00 // sleep timer 20 mins
+
+
+
+
+Wireless illumination smart mode
+
+63 01 01 00 00 00 00 00 // off
+63 01 01 01 00 00 00 00 // on
+
+
+
+WIRED Charging 
+max=148
+
+12 94 00 00 00 00 00 00 // fully charged
+12 93 00 00 00 00 00 00 //
+12 92 00 00 00 00 00 00 //
+12 91 00 00 00 00 00 00 //
+12 8f 00 00 00 00 00 00 //
+12 8e 00 00 00 00 00 00 //
+
+Wireless idle response
+40 ff 38 2e 31 00 00 00 // ???
+40 ff 00 00 00 00 00 00 // ???
+
+Wireles check if idle response??
+63 00 00 00 00 00 00 00
+
+Wireless powered on resposne
+bc 01 00 00 00 00 00 00// on
+bc 00 00 00 00 00 00 00// off
+
+
+
+wireless
+
+
+wireless profiles ???
+68 00 00 00 00 00 00 // profile 1?
+68 01 00 00 00 00 00 // profile 2?
+d0 00 00 00 00 00 00 // ???
+bc 00 00 00 00 00 00 // ???
+d2 00 00 00 00 00 00 // ???
+

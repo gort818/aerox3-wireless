@@ -1,0 +1,8 @@
+[Unit]
+Description=Aerox 3 Wireless LED control
+
+[Service]
+ExecStart=path to aerox.py
+
+[Install]
+WantedBy=multi-user.target 
