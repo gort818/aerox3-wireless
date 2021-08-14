@@ -74,6 +74,17 @@ wireless reactve lighting
 
 
 
+///TIMER
+TIME is in milliseconds 
+one min is 60000 milliseconds and in hex that is EA60
+five mins is 300000 milliseconds and in hex that is 493E0
+
+Looks like when sending a report the hex in reversed.
+
+20 mins is 1200000 milliseconds and in hex that is "124F80"
+but when sending a report it should be "80 45 12"
+
+
 wireless dim timer
 [63] [intensity] [01] [01] [00] last 3 [time?]
 
@@ -86,6 +97,7 @@ wireless dim timer
 
 
 wireless sleep timer
+0-128 ???
 69 00 00 00 00 00 00 00 // sleep timer 0ff
 69 60 ea 00 00 00 00 00 // sleep timer 1 min
 69 90 5f 01 00 00 00 00 // sleeptimer 1.5 mins
